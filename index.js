@@ -1,7 +1,7 @@
 const express = require("express");
 const  viewRoute = require("./routes/indexRoutes");
 const connectDB = require("./config/db");
-const frontendRoute = require("./routes/frontend.routes");
+// const frontendRoute = require("./routes/frontend.routes");
 const app = express();
 app.set("view engine", "ejs")
 app.use(express.urlencoded({ extended: true }));
@@ -12,7 +12,7 @@ const PORT = 6600;
 connectDB()
 
 app.use("/", viewRoute);
-app.use("/", frontendRoute);
+// app.use("/", frontendRoute);
 
 
 app.listen(PORT, () => {
