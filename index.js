@@ -12,6 +12,7 @@ const PORT = 6600;
 connectDB()
 
 app.use("/", viewRoute);
+// app.use("/auth", )
 // app.use("/", frontendRoute);
 
 

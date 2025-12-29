@@ -1,13 +1,15 @@
-const mongoosse = require("mongoose");
+const mongoose = require('mongoose')
+const MONGO_URI = "mongodb://localhost:27017/moviesDb"
 
-const MON_URI = "mongodb://localhost:27017/moviesDB";
-
-const connectDB = async () => {
-    mongoosse.connection.on("connected", () => {
-        console.log("database connected successfully.......");
-    });
-
-    await mongoosse.connect(MON_URI)
+const connectDb = async () => {
+    try {
+        mongoose.connection.on('connected', () => {
+            console.log("Database connected successfully.");
+        })
+        await mongoose.connect(MONGO_URI)
+    } catch (error) {
+        console.log(error);
+    }
 }
 
-module.exports = connectDB;
+module.exports = connectDb
